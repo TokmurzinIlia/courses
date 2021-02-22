@@ -1,6 +1,8 @@
 package eu.senla.pats.head;
 
-public class Head {
+import eu.senla.pats.Number;
+
+public class Head implements Number {
 
     String number;
 
@@ -20,5 +22,13 @@ public class Head {
 
     public void setHeadForms(HeadForms headForms) {
         this.headForms = headForms;
+    }
+
+    @Override
+    public String toString() {
+        return "Head{" +
+                "number='" + number + '\'' +
+                ", headForms=" + headForms +
+                '}';
     }
 }

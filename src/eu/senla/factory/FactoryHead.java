@@ -1,4 +1,4 @@
-package eu.senla.Head;
+package eu.senla.factory;
 
 import eu.senla.pats.head.Head;
 

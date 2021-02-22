@@ -1,4 +1,4 @@
-package eu.senla.Head;
+package eu.senla.factory;
 
 import eu.senla.pats.body.Body;
 
@@ -11,4 +11,6 @@ public class FactoryBody {
         return body;
 
     }
+
+
 }
