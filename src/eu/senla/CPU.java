@@ -1,8 +1,25 @@
 package eu.senla;
 
-public class CPU<CPU> {
+import java.util.Objects;
+
+public class CPU {
 
     String name;
+
+    int frequency;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CPU cpu = (CPU) o;
+        return frequency == cpu.frequency && Objects.equals(name, cpu.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, frequency);
+    }
 
     @Override
     public String toString() {
@@ -12,7 +29,7 @@ public class CPU<CPU> {
                 '}';
     }
 
-    int frequency;
+
 
     public String getName() {
         return name;

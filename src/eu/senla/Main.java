@@ -27,7 +27,7 @@ public class Main {
         CPU cpu10 = new CPU("i7-8700K Coffee Lake", 3700);
         //Создание стрима из коллекции
         Collection<CPU> collection = Arrays.asList(cpu1, cpu2, cpu3, cpu4, cpu5, cpu6, cpu7, cpu8, cpu9, cpu10);
-        Stream<CPU> streamFromCollection = collection.stream();
+        collection.stream()
 //        //Создание стрима из массива
 //        CPU[] array = {cpu1, cpu2, cpu3, cpu4, cpu5, cpu6, cpu7, cpu8, cpu9, cpu10};
 //        Stream<CPU> streamFromArrays = Arrays.stream(array);
@@ -38,25 +38,65 @@ public class Main {
 //            e.printStackTrace();
 //        }
 
-        collection.stream().filter(frequency::equals).CPU();
+        .filter(CPU -> CPU.getFrequency() > 3500)
+                .peek(System.out::println)
+                .collect(Collectors.toList());
 
-        collection.stream().skip(collection.size() — 1).findFirst().orElse(«1»);
+        System.out.println();
 
-    //    distinct	Возвращает стрим без дубликатов (для метода equals)
-    collection.stream().distinct().collect(Collectors.toList())
-      //  map	Преобразует каждый элемент стрима
-    collection.stream().map((s) -> s + "_1").collect(Collectors.toList())
-    //    peek	Возвращает тот же стрим, но применяет функцию к каждому элементу стрима
-    collection.stream().map(String::toUpperCase).peek((e) -> System.out.print("," + e)).collect(Collectors.toList())
-        //limit	Позволяет ограничить выборку определенным количеством первых элементов
-        collection.stream().limit(2).collect(Collectors.toList())
-        //sorted	Позволяет сортировать значения либо в натуральном порядке, либо задавая Comparator
-        collection.stream().sorted().collect(Collectors.toList())
+        Collection<CPU> collection1 = Arrays.asList(cpu1, cpu2, cpu3, cpu4, cpu5, cpu6, cpu7, cpu8, cpu9, cpu10);
+        collection1.stream()
+
+
+                .skip(collection1.size() - 1)
+                .peek(System.out::println)
+                .collect(Collectors.toList());
+
+        System.out.println();
+
+        //    distinct	Возвращает стрим без дубликатов (для метода equals)
+
+        Collection<CPU> collection2 = Arrays.asList(cpu1, cpu2, cpu4, cpu4, cpu6, cpu6, cpu7, cpu7, cpu9, cpu9);
+        collection2.stream()
+        .distinct()
+        .peek(System.out::println)
+        .collect(Collectors.toList());
+
+        System.out.println();
+
+//      //  map	Преобразует каждый элемент стрима
+    collection.stream()
+            .map((s) -> "Hello" + s )
+            .peek(System.out::println)
+            .collect(Collectors.toList());
+
+        System.out.println();
+
+//    //    peek	Возвращает тот же стрим, но применяет функцию к каждому элементу стрима
+    collection.stream()
+          //  .map(String::toUpperCase)
+            .peek((e) -> System.out.println( e + "///////"))
+            .collect(Collectors.toList());
+
+        System.out.println();
+
+//        //limit	Позволяет ограничить выборку определенным количеством первых элементов
+    collection.stream()
+            .limit(4)
+            .peek(System.out::println)
+            .collect(Collectors.toList());
+
+        System.out.println();
+
+//        //sorted	Позволяет сортировать значения либо в натуральном порядке, либо задавая Comparator
+//    collection.stream()
+//            .sorted((o1,o2) -> o1.getFrequency().compareTo(o2.getFrequency()))
+//            .collect(Collectors.toList());
     //    mapToInt, mapToDouble, mapToLong	Аналог map, но возвращает числовой стрим (то есть стрим из числовых примитивов)
-    collection.stream().mapToInt((s) -> Integer.parseInt(s)).toArray()
-        //flatMap, flatMapToInt, flatMapToDouble, flatMapToLong	Похоже на map, но может создавать из одного элемента несколько
-        collection.stream().flatMap((p) -> Arrays.asList(p.split(",")).stream()).toArray(String[]::new)
-        System.out.println(list);
+    collection.stream()
+            .mapToDouble((s) -> Integer.parseInt(s)).toArray()
+//        //flatMap, flatMapToInt, flatMapToDouble, flatMapToLong	Похоже на map, но может создавать из одного элемента несколько
+//        collection.stream().flatMap((p) -> Arrays.asList(p.split(",")).stream()).toArray(String[]::new)
 
     }
 }
