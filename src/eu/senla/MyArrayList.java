@@ -1,18 +1,27 @@
 package eu.senla;
 
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.ListIterator;
+import java.util.*;
 
-public class MyArrayList<E> implements  MyList<E> {
+public class MyArrayList<E> implements MyList<E> {
 
-    private final int capacity = 16;
+    private final int CAPACITY = 16;
     private final int CUT_RATE = 2;
-    private Object[] array = new Object[capacity];
+    private Object[] array = new Object[CAPACITY];
+   // private static final Object[] EMPTY_ELEMENTDATA = {};
     private int size = 0;
+
+    @Override
+    public String toString() {
+        return "MyArrayList{" +
+                "array=" + Arrays.toString(array) +
+                '}';
+    }
+
     // создает пустой список
     public MyArrayList(){
-        this.array = new Object[capacity];
+
+        this.array = new Object[CAPACITY];
+
     }
     // создает список, который имеет начальную емкость capacity
     public MyArrayList(int capacity){
@@ -23,6 +32,13 @@ public class MyArrayList<E> implements  MyList<E> {
             throw new IllegalStateException("Capacity can't be less than 0!");
         }
     }
+    // создает список, в который добавляются все элементы коллекции col
+    MyArrayList(Collection<? extends E> col){
+        array = col.toArray();
+        size = array.length;
+
+    };
+
 
     @Override
     public void add(int index, E obj) {
@@ -44,7 +60,16 @@ public class MyArrayList<E> implements  MyList<E> {
 
     @Override
     public boolean addAll(int index, Collection<? extends E> col) {
-        return false;
+        Object[] a = col.toArray();
+        int numNew = array.length;
+        int numMoved = size - index;
+        if (numMoved > 0)
+            System.arraycopy(array, index, array, index + numNew,
+                    numMoved);
+
+        System.arraycopy(a, 0, array, index, numNew);
+        size += numNew;
+        return numNew != 0;
     }
 
     @Override
@@ -82,9 +107,62 @@ public class MyArrayList<E> implements  MyList<E> {
 
     @Override
     public ListIterator<E> listIterator() {
-        return null;
-    }
 
+        ListIterator<E> listIterator = new ListIterator<E>() {
+            int cursor;       // index of next element to return
+            int lastRet = -1; // index of last element returned; -1 if no such
+            //int expectedModCount = modCount;
+            @Override
+            public boolean hasNext() {
+                return cursor != size;
+            }
+
+            @Override
+            public E next() {
+                int i = cursor;
+                Object[] array = MyArrayList.this.array;
+                cursor = i + 1;
+                return (E) array[lastRet = i];
+            }
+
+
+            @Override
+            public boolean hasPrevious() {
+                return cursor != 0;
+            }
+
+            @Override
+            public E previous() {
+                return null;
+            }
+
+            @Override
+            public int nextIndex() {
+                return 0;
+            }
+
+            @Override
+            public int previousIndex() {
+                return 0;
+            }
+
+            @Override
+            public void remove() {
+
+            }
+
+            @Override
+            public void set(E e) {
+
+            }
+
+            @Override
+            public void add(E e) {
+
+            }
+        }
+        return listIterator;
+    }
     @Override
     public E remove(int index) {
         E oldValue = (E) array[index];
@@ -104,11 +182,16 @@ public class MyArrayList<E> implements  MyList<E> {
 
     @Override
     public void sort(Comparator<? super E> comp) {
-
+        Arrays.sort((E[]) array, 0, size, comp);
     }
 
     @Override
-    public MyList<E> subList(int start, int end) {
-        return null;
+    public MyArrayList<E> subList(int start, int end) {
+        MyArrayList<E> arrays = new MyArrayList();
+        for (int i = start, j = 0; i <= end; i++, j++){
+            arrays<E> = (E) array[i];
     }
+        return arrays;
+    }
+
 }
