@@ -108,61 +108,62 @@ public class MyArrayList<E> implements MyList<E> {
     @Override
     public ListIterator<E> listIterator() {
 
-        ListIterator<E> listIterator = new ListIterator<E>() {
-            int cursor;       // index of next element to return
-            int lastRet = -1; // index of last element returned; -1 if no such
-            //int expectedModCount = modCount;
-            @Override
-            public boolean hasNext() {
-                return cursor != size;
-            }
-
-            @Override
-            public E next() {
-                int i = cursor;
-                Object[] array = MyArrayList.this.array;
-                cursor = i + 1;
-                return (E) array[lastRet = i];
-            }
-
-
-            @Override
-            public boolean hasPrevious() {
-                return cursor != 0;
-            }
-
-            @Override
-            public E previous() {
-                return null;
-            }
-
-            @Override
-            public int nextIndex() {
-                return 0;
-            }
-
-            @Override
-            public int previousIndex() {
-                return 0;
-            }
-
-            @Override
-            public void remove() {
-
-            }
-
-            @Override
-            public void set(E e) {
-
-            }
-
-            @Override
-            public void add(E e) {
-
-            }
-        }
-        return listIterator;
-    }
+//        ListIterator<E> listIterator = new ListIterator<E>() {
+//            int cursor;       // index of next element to return
+//            int lastRet = -1; // index of last element returned; -1 if no such
+//            //int expectedModCount = modCount;
+//            @Override
+//            public boolean hasNext() {
+//                return cursor != size;
+//            }
+//
+//            @Override
+//            public E next() {
+//                int i = cursor;
+//                Object[] array = MyArrayList.this.array;
+//                cursor = i + 1;
+//                return (E) array[lastRet = i];
+//            }
+//
+//
+//            @Override
+//            public boolean hasPrevious() {
+//                return cursor != 0;
+//            }
+//
+//            @Override
+//            public E previous() {
+//                return null;
+//            }
+//
+//            @Override
+//            public int nextIndex() {
+//                return 0;
+//            }
+//
+//            @Override
+//            public int previousIndex() {
+//                return 0;
+//            }
+//
+//            @Override
+//            public void remove() {
+//
+//            }
+//
+//            @Override
+//            public void set(E e) {
+//
+//            }
+//
+//            @Override
+//            public void add(E e) {
+//
+//            }
+//        };
+//        return listIterator;
+//
+        return null;}
     @Override
     public E remove(int index) {
         E oldValue = (E) array[index];
@@ -183,15 +184,17 @@ public class MyArrayList<E> implements MyList<E> {
     @Override
     public void sort(Comparator<? super E> comp) {
         Arrays.sort((E[]) array, 0, size, comp);
+
     }
 
     @Override
     public MyArrayList<E> subList(int start, int end) {
-        MyArrayList<E> arrays = new MyArrayList();
-        for (int i = start, j = 0; i <= end; i++, j++){
-            arrays<E> = (E) array[i];
-    }
-        return arrays;
+//        Object[] arrays = new Object[]
+//        for (int i = start, j = 0; i <= end; i++, j++){
+//           arrays[j] =  array[i];
+//    }
+//     //   return arrays;
+        return null;
     }
 
 }
