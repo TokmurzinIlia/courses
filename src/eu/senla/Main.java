@@ -19,10 +19,11 @@ public class Main {
         System.out.println(myArrayList.get(5));
         System.out.println(myArrayList.indexOf("567"));
         System.out.println(myArrayList.lastIndexOf("25"));
-        myArrayList.remove(2);
+        myArrayList.remove(100);
         System.out.println(myArrayList);
         myArrayList.set(6,"123");
         System.out.println(myArrayList);
+        myArrayList.subList(1,5);
 
     }
 

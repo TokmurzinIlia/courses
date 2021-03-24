@@ -189,12 +189,15 @@ public class MyArrayList<E> implements MyList<E> {
 
     @Override
     public MyArrayList<E> subList(int start, int end) {
-//        Object[] arrays = new Object[]
-//        for (int i = start, j = 0; i <= end; i++, j++){
-//           arrays[j] =  array[i];
-//    }
-//     //   return arrays;
-        return null;
+        MyArrayList<E> myList= new MyArrayList<>(end-start);
+        int counter = 0;
+
+        for (int i = start; i < end; i++){
+            myList.add(counter, (E) array[i]);
+                    counter++;
+            }
+        return myList;}
+
     }
 
-}
+
