@@ -53,7 +53,7 @@ public class MyArrayList<E> implements MyList<E> {
         for (int i = 0; i < index; i++)
             array[index] = array[index];
         for (int i = index; i < array.length; i++)
-            array[i]= boof[i-1];
+            array[i]= boof[i];
         array[index] = obj;
         size++;
     }
@@ -186,6 +186,9 @@ public class MyArrayList<E> implements MyList<E> {
         Arrays.sort((E[]) array, 0, size, comp);
 
     }
+//public int compareTo(Object e){
+//        return this.compareTo(e);
+//}
 
     @Override
     public MyArrayList<E> subList(int start, int end) {
