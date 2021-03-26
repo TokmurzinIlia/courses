@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c973836-d5d0-430b-8bf9-156bb57abef3" name="Default Changelist" comment="forth array">
+    <list default="true" id="3c973836-d5d0-430b-8bf9-156bb57abef3" name="Default Changelist" comment="Five array">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eu/senla/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eu/senla/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eu/senla/MyArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eu/senla/MyArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eu/senla/MyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eu/senla/MyList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,16 +96,16 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Илья Файлы НЕ УДАЛЯТЬ\arrayList" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MainAdd">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="eu.senla.Main" />
+      <option name="MAIN_CLASS_NAME" value="eu.senla.MainGet" />
       <module name="arrayList" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
@@ -113,8 +114,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainAdd" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="eu.senla.MainAdd" />
+      <module name="arrayList" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="eu.senla.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainCapasityExeption" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="eu.senla.MainCapasityExeption" />
+      <module name="arrayList" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="eu.senla.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainAdd" />
+        <item itemvalue="Application.MainCapasityExeption" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -163,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616595840651</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Five array">
+      <created>1616597624578</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1616597624578</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,6 +219,7 @@
     <MESSAGE value="second array" />
     <MESSAGE value="third array" />
     <MESSAGE value="forth array" />
-    <option name="LAST_COMMIT_MESSAGE" value="forth array" />
+    <MESSAGE value="Five array" />
+    <option name="LAST_COMMIT_MESSAGE" value="Five array" />
   </component>
 </project>
